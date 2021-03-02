@@ -1,3 +1,5 @@
+import './SASS/style.scss';
+
 console.log('test');
 const firstText = 'firstText';
 const secondText = 'secondText';
