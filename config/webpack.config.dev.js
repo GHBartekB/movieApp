@@ -8,6 +8,10 @@ module.exports = {
         filename: 'js/dev.js',
         path: path.resolve(__dirname, '../', 'build')
     },
+    devServer: {
+        open: true,
+        contentBase: path.resolve(__dirname, '../', 'public/assets'),
+    },
     module: {
         rules: [
             {
