@@ -1,0 +1,21 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.header {
+
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+
+    @include mq(tablet-large) {
+        justify-content: flex-end;
+    }
+
+    &__form {
+        margin: 50px;
+    }
+
+    &__input {
+        height: 40px;
+    }
+}
