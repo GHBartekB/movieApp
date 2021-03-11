@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import '_variables';
 
 @mixin mq($breakpoint) {
     $size: map-get($breakpoints, $breakpoint);
