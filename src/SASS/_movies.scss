@@ -8,10 +8,12 @@
     justify-items: center;
 
     .movie {
+        position: relative;
         width: 250px;
-        height: 400px;
+        height: 265px;
         overflow: hidden;
         background-color: $secondary-color;
+        transition: .3s ease-in;
 
 
         &__image {
@@ -27,21 +29,43 @@
 
         &__title {
             font-size: 1.8em;
+            font-weight: 400;
         }
 
         &__rate {
             background-color: $primary-color;
             padding: 5px 10px;
             font-size: 1.6em;
+            font-weight: 300;
         }
 
         &__description {
-            color: #ddd;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-weight: 200;
             font-size: 1.4em;
             text-align: justify;
-            padding: 10px 1change 0px;
+            padding: 20px 10px 0;
             line-height: 150%;
+            transform: translateY(101%);
+            max-height: 100%;
+            background-color: $primary-color;
+            color: #ddd;
+            transition: .3s ease-in;
         }
+
+
+    }
+
+    .movie:hover {
+        height: 400px;
+    }
+
+    .movie:hover .movie__description {
+        transform: (translateY(0));
+
     }
 
 }
