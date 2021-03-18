@@ -10,7 +10,7 @@
     .movie {
         position: relative;
         width: 250px;
-        height: 265px;
+        height: 285px;
         overflow: hidden;
         background-color: $secondary-color;
         transition: .3s ease-in;
@@ -37,6 +37,8 @@
             padding: 5px 10px;
             font-size: 1.6em;
             font-weight: 300;
+            height: 40px;
+            width: 40px;
         }
 
         &__description {
