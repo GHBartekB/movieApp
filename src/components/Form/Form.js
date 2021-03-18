@@ -17,7 +17,14 @@ const fetchData = () => {
     .then(response => response.json())
     .then(data => {
         const fetchData = data.results;
+        const movieTitle = fetchData[0].title;
+        const movieRate = fetchData[0].vote_average; 
+        const movieOverview = fetchData[0].overview;
         console.log(fetchData);
+        console.log(movieTitle);
+        console.log(movieRate);
+        console.log(movieOverview);
+        createElement(movieTitle,movieRate,movieOverview);
     })
     .catch(error => console.log(error + "something went wrong"))
 }
