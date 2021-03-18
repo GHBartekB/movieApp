@@ -20,23 +20,25 @@ const fetchData = () => {
         const movieTitle = fetchData[0].title;
         const movieRate = fetchData[0].vote_average; 
         const movieOverview = fetchData[0].overview;
+        const movieImageSrc = IMG_URL + fetchData[0].poster_path;
         console.log(fetchData);
         console.log(movieTitle);
         console.log(movieRate);
         console.log(movieOverview);
-        createElement(movieTitle,movieRate,movieOverview);
+        console.log(movieImageSrc);
+        createElement(movieTitle,movieRate,movieOverview,movieImageSrc);
     })
     .catch(error => console.log(error + "something went wrong"))
 }
 
-const createElement = (title = 'test', rate = '10', overview ="some text") => {
+const createElement = (title = 'test', rate = '10', overview ="some text", image) => {
     const movies = document.querySelector('.movies');
     console.log(movies);
     const element = document.createElement('div');
     element.classList.add('movie');
     element.innerHTML = ` 
     <img class="movie__image"
-                    src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2125&q=80"
+                    src=${image}
                     alt="test photo">
                 <div class="movie__info">
                     <p class="movie__title">${title}</p>
