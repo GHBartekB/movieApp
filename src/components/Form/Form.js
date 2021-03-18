@@ -17,45 +17,41 @@ const fetchData = () => {
     .then(response => response.json())
     .then(data => {
         const fetchData = data.results;
-        const movieTitle = fetchData[0].title;
-        const movieRate = fetchData[0].vote_average; 
-        const movieOverview = fetchData[0].overview;
-        const movieImageSrc = IMG_URL + fetchData[0].poster_path;
-        console.log(fetchData);
-        console.log(movieTitle);
-        console.log(movieRate);
-        console.log(movieOverview);
-        console.log(movieImageSrc);
-        createElement(movieTitle,movieRate,movieOverview,movieImageSrc);
+        createElement(fetchData);
+        
     })
     .catch(error => console.log(error + "something went wrong"))
 }
 
-const createElement = (title = 'test', rate = '10', overview ="some text", image) => {
+
+
+const createElement = (moviesData) => {
     const movies = document.querySelector('.movies');
-    console.log(movies);
-    const element = document.createElement('div');
-    element.classList.add('movie');
-    element.innerHTML = ` 
-    <img class="movie__image"
-                    src=${image}
-                    alt="test photo">
-                <div class="movie__info">
-                    <p class="movie__title">${title}</p>
-                    <span class="movie__rate">${rate}</span>
-                </div>
-                <p class="movie__description">
-                    ${overview}
-                </p>
-`;
-    movies.appendChild(element);
+    moviesData.map(movie => {
+        const element = document.createElement('div');
+        const image = IMG_URL + movie.poster_path;
+        element.classList.add('movie');
+        element.innerHTML = ` 
+        <img class="movie__image"
+                        src=${image}
+                        alt=${movie.title}>
+                    <div class="movie__info">
+                        <p class="movie__title">${movie.title}</p>
+                        <span class="movie__rate">${movie.rate}</span>
+                    </div>
+                    <p class="movie__description">
+                        ${movie.overview}
+                    </p>
+    `;
+        movies.appendChild(element);
+    })
+   
 }
 
 
 const getData = (e) => {
     e.preventDefault();
     const value = input.value;
-    createElement();
     fetchData();
 
     input.value = "";
