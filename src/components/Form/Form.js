@@ -16,8 +16,8 @@ const fetchData = () => {
     })
     .then(response => response.json())
     .then(data => {
-        const fetchData = data.results;
-        createElement(fetchData);
+        const moviesData = data.results;
+        createElement(moviesData);
         
     })
     .catch(error => console.log(error + "something went wrong"))
