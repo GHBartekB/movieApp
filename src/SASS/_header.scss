@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     font-size: 0.625rem;
+    font-family: 'Poppins', sans-serif;
 
     @include mq(tablet-large) {
         justify-content: flex-end;
@@ -11,6 +12,9 @@
 
     &__form {
         margin: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__input {
@@ -26,5 +30,23 @@
             outline: none;
         }
 
+    }
+
+    &__button {
+        margin-top: 50px;
+        width: 50%;
+        font-size: 1.6em;
+        background-color: royalblue;
+        color: #ddd;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        transition: .3s;
+
+        &:hover {
+            color: royalblue;
+            background-color: #ddd;
+        }
     }
 }
