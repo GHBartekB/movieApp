@@ -7,6 +7,22 @@
     gap: 50px;
     justify-items: center;
 
+    @include mq(smartphone-large) {
+        gap: 50px 10px;
+    }
+
+    @include mq(tablet) {
+        gap: 30px 0;
+    }
+
+    @include mq(tablet-large) {
+        gap: 50px 10px;
+    }
+
+    @include mq(desktop-small) {
+        gap: 50px;
+    }
+
     .movie {
         position: relative;
         width: 250px;
