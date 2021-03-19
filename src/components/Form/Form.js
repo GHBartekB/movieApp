@@ -30,9 +30,10 @@ const createElement = (moviesData) => {
     const movies = document.querySelector('.movies');
     movies.innerHTML = '';
     moviesData.map(movie => {
+        console.log(movie);
         const element = document.createElement('div');
         const image = IMG_URL + movie.poster_path;
-        const {title, rate, overview} = movie;
+        const {title,vote_average, overview} = movie;
         element.classList.add('movie');
         element.innerHTML = ` 
         <img class="movie__image"
@@ -40,7 +41,7 @@ const createElement = (moviesData) => {
                         alt=${title}>
                     <div class="movie__info">
                         <p class="movie__title">${title}</p>
-                        <span class="movie__rate">${rate}</span>
+                        <span class="movie__rate">${vote_average}</span>
                     </div>
                     <p class="movie__description">
                         ${overview}
