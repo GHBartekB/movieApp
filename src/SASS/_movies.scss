@@ -47,11 +47,13 @@
         &__title {
             font-size: 1.8em;
             font-weight: 400;
+            width: 200px;
         }
 
         &__rate {
             background-color: $primary-color;
-            padding: 5px 10px;
+            text-align: center;
+            line-height: 40px;
             font-size: 1.6em;
             font-weight: 300;
             height: 40px;
