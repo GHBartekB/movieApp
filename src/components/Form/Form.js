@@ -29,8 +29,8 @@ fetchData(API_URL);
 const createElement = (moviesData) => {
     const movies = document.querySelector('.movies');
     movies.innerHTML = '';
-    moviesData.map(movie => {
-        console.log(movie);
+    const movieEl = moviesData.filter(movieEl => movieEl.vote_average > 0 && movieEl.poster_path);
+    movieEl.map(movie => {
         const element = document.createElement('div');
         const image = IMG_URL + movie.poster_path;
         const {title,vote_average, overview} = movie;
@@ -57,7 +57,6 @@ const getData = (e) => {
     e.preventDefault();
     const value = input.value;
     const URL = SEARCH_URL + value;
-    console.log(URL);
     fetchData(URL);
 
     input.value = "";
