@@ -1,4 +1,4 @@
 import './SASS/style.scss';
-import './tools/data.js';
+import './components/Form/Form.js';
 
 
